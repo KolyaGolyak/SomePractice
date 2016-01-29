@@ -19,13 +19,22 @@ namespace Proj
                 Console.WriteLine("Ввести целое число");
                 s = Console.ReadLine();
                 int i = Convert.ToInt32(s);
+                object t = i;
+                long bububu = (long)t;
                 Console.WriteLine();
                 Console.WriteLine();
                 Console.WriteLine("ВВести дробное число через ,");
                 s = Console.ReadLine();
                 double d = Convert.ToDouble(s);
+                throw new Exception("Я ошибко");
             }
-            catch (Exception e) { Console.WriteLine(e.ToString()); }
+            catch (Exception e) {
+                if (e.Message == "Я ошибко")
+                {
+                    Console.WriteLine("произошла рукотворная ошибка");
+                }
+                else Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         }
     }
